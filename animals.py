@@ -7,7 +7,8 @@ class Animal:
 
 
 class Bird(Animal):
-    pass
+    def say(self):
+        raise Exception("Birds don't speak")
 
 
 class Dog(Animal):
