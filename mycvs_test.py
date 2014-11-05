@@ -14,13 +14,15 @@ def start_test():
 
 
 def end_test():
-    shutil.rmtree(TEST_DIR)
+    pass
 
 
 def test_init_creates_directory_mycvs_if_not_existed():
     start_test()
 
-    os.system('python3 ' + MYCVS + ' init')
+    command_line = ('python3 ' if os.name != 'nt' else '') + MYCVS + ' init'
+    print('Running:', command_line)
+    os.system(command_line)
     if os.path.isdir('mycvs'):
         print('Test passed')
     else:
